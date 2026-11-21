@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+    db:
+        image: mysql:8.0.36
+        environment:
+            MYSQL_ROOT_PASSWORD: "toor"
+        ports:
+            - "127.0.0.1:3307:3306" # Only publish the database to this computer.
+        volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+        command: ["mysqld", "--bind-address=0.0.0.0"] # Listen inside the container network.
+        healthcheck:
+            test:
+                [
+                    "CMD-SHELL",
+                    'mysqladmin ping --host=127.0.0.1 --user=root --password="$$MYSQL_ROOT_PASSWORD" --silent',
+                ]
+            start_period: 30s
+            interval: 5s
+            timeout: 3s
+            retries: 12
+
+networks:
+    default:

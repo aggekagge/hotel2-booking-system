@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1224.0" style="-fx-background-image: url('css/hotel2-background.png'); -fx-background-position: center center; -fx-background-repeat: no-repeat;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel2.GUI.HomePageController">
+    <children>
+        <HBox alignment="CENTER" prefHeight="816.0" prefWidth="1280.0" style="-fx-background-image: url('css/hotel2-background.png'); -fx-background-position: center center; -fx-background-repeat: no-repeat;">
+            <children>
+                <AnchorPane fx:id="MainAnchorpane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="779.0" prefWidth="1258.0" style="-fx-background-color: rgba(255, 255, 255, 0.8); -fx-border-radius: 20; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 5);">
+                    <children>
+                        <ImageView fx:id="settingsIcon" fitHeight="59.0" fitWidth="60.0" layoutX="2.0" layoutY="4.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@settingsicon.png" />
+                            </image>
+                        </ImageView>
+                        <ComboBox fx:id="settingsBox" layoutX="2.0" layoutY="4.0" opacity="0.0" prefHeight="59.0" prefWidth="59.0" stylesheets="@css/Settings.css" />
+                        <Label fx:id="LoggedinName" layoutX="1003.0" layoutY="21.0" prefHeight="20.0" prefWidth="183.0" text="Inloggad som: " />
+
+                        <!-- Managed rows keep the toolbar and daily panels outside the calendar. -->
+                        <VBox spacing="16.0" AnchorPane.topAnchor="49.0" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="102.0">
+                            <children>
+                                <HBox fx:id="calendarToolbar" alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="58.0" maxHeight="-Infinity" spacing="16.0">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#roomHandling" prefHeight="50.0" prefWidth="218.0" stylesheets="@css/style.css" text="Visa rum" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <HBox alignment="CENTER" spacing="12.0">
+                                            <children>
+                                                <Button mnemonicParsing="false" onAction="#ResetPage" prefHeight="32.0" prefWidth="64.0" style="-fx-background-color: none; -fx-padding: 0; -fx-font-size: 12px;" text="Återställ" />
+                                                <Button fx:id="leftArrowID" mnemonicParsing="false" onAction="#LeftArrow" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/style.css" text="&lt;" />
+                                                <Label fx:id="monthLabel" alignment="CENTER" minWidth="160.0" prefHeight="37.0" prefWidth="160.0" text="Månad" textAlignment="CENTER">
+                                                    <font>
+                                                        <Font size="18.0" />
+                                                    </font>
+                                                </Label>
+                                                <Button fx:id="rightArrowID" mnemonicParsing="false" onAction="#RightArrow" prefHeight="50.0" prefWidth="50.0" stylesheets="@css/style.css" text="&gt;" />
+                                            </children>
+                                        </HBox>
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Button mnemonicParsing="false" onAction="#ManageBooking" prefHeight="50.0" prefWidth="218.0" stylesheets="@css/style.css" text="Hantera bokning" />
+                                    </children>
+                                </HBox>
+
+                                <VBox fx:id="CalenderBox" minHeight="-Infinity" prefHeight="433.0" maxHeight="-Infinity" prefWidth="1085.0" />
+
+                                <HBox alignment="TOP_LEFT" spacing="35.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <VBox minWidth="350.0" prefWidth="350.0" maxWidth="350.0" spacing="8.0">
+                                            <children>
+                                                <Label minHeight="37.0" text="Dagens incheckningar">
+                                                    <font>
+                                                        <Font size="27.0" />
+                                                    </font>
+                                                </Label>
+                                                <ScrollPane fx:id="CheckinPane" fitToWidth="true" hbarPolicy="NEVER" minHeight="96.0" prefHeight="196.0" prefWidth="350.0" VBox.vgrow="ALWAYS" />
+                                            </children>
+                                        </VBox>
+                                        <VBox minWidth="350.0" prefWidth="350.0" maxWidth="350.0" spacing="8.0">
+                                            <children>
+                                                <Label minHeight="37.0" text="Dagens utcheckningar">
+                                                    <font>
+                                                        <Font size="27.0" />
+                                                    </font>
+                                                </Label>
+                                                <ScrollPane fx:id="CheckoutPane" fitToWidth="true" hbarPolicy="NEVER" minHeight="96.0" prefHeight="196.0" prefWidth="350.0" VBox.vgrow="ALWAYS" />
+                                            </children>
+                                        </VBox>
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <VBox alignment="BOTTOM_RIGHT" spacing="14.0">
+                                            <children>
+                                                <Button fx:id="newButton" mnemonicParsing="false" onAction="#customerHandlingButton" prefHeight="87.0" prefWidth="239.0" stylesheets="@css/style.css" text="Hantera gäster" />
+                                                <Button mnemonicParsing="false" onAction="#NewBooking" prefHeight="87.0" prefWidth="239.0" stylesheets="@css/style.css" text="Ny bokning" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+    </children>
+</VBox>
