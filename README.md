@@ -155,7 +155,7 @@ These are intentionally public credentials for the local demonstration database 
 
 ### 5. Try the main workflows
 
-1. Open **Hantera gäster** and choose **Skapa ny gäst**. Enter a first name, surname, unique email and telephone number, and a payment method. For example, use `Demo`, `Guest`, `demo.guest@example.com`, and `0700000001` if those contact details have not already been registered.
+1. Open **Hantera gäster** and choose **Skapa ny gäst**. Enter a first name, surname, unique email, phone number, payment method. For example, use `Demo`, `Guest`, `demo.guest@example.com`, `0700000001` if those contact details have not already been registered.
 2. Return to the dashboard and select **Ny bokning**. Choose the guest, current or future stay dates, guest count, and an available room, then review and save the booking.
 3. Open **Hantera bokning** to find the reservation. A booking starting today also appears in today's arrivals, where you can try check-in.
 
@@ -179,7 +179,7 @@ This keeps the stopped container and its current demo data for the next run. Sta
 | Port `3307` is already in use | Another database may already be running on that port. Use one database instance at a time. The port in `Connector.java` must match the host port in the Compose file. |
 | Java is missing or the build reports a Java version error | Check `java -version` and point `JAVA_HOME` to JDK 21, then open a new terminal. |
 | The application cannot connect to MySQL | Check that `db` is healthy with `docker compose -f docker/docker-compose.yml ps`. Inspect startup errors with `docker compose -f docker/docker-compose.yml logs db`. |
-| Agust's login is missing from an older database | Use `admin` / `Admin`, or apply the supplied `docker/add-agust-admin.sql` update to add Agust. Initialization scripts run only for a fresh database. |
+| Login is missing from an older database | Use `admin` / `Admin`, or apply the supplied `docker/add-agust-admin.sql` update to add Agust. Initialization scripts run only for a fresh database. |
 
 ## Limitations and Possible Improvements
 
