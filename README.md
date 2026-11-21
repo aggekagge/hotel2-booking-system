@@ -93,7 +93,7 @@ The application uses separate classes for booking, guest, room, and staff operat
 
 ## Running Locally
 
-### 1 Prepare your computer
+### 1. Prepare your computer
 
 - Install **JDK 21** and make sure your terminal can find it. If needed, set `JAVA_HOME` to your JDK installation directory.
 - Install **Docker Desktop** and start it, or use Docker Engine with the Compose v2 plugin on Linux.
@@ -107,7 +107,7 @@ java -version
 docker compose version
 ```
 
-### 2 Start the database
+### 2. Start the database
 
 Run this from the project root on any supported platform:
 
@@ -120,7 +120,7 @@ Wait for the first command to finish successfully and for `db` to show as health
 
 MySQL is available to the desktop application at **localhost:3307**. The host mapping `127.0.0.1:3307:3306` restricts the published database port to your own computer. See [Docker's port-publishing documentation](https://docs.docker.com/engine/network/port-publishing/) for the meaning of this mapping.
 
-### 3 Launch the desktop application
+### 3. Launch the desktop application
 
 Keep the database running. From the same project-root folder, run:
 
@@ -139,7 +139,7 @@ chmod +x gradlew
 
 The JavaFX login window opens as a desktop application. Keep the terminal open while using it. Most interface labels are in Swedish.
 
-### 4 Sign in with a demo account
+### 4. Sign in with a demo account
 
 Use a **username**, rather than an email address, in the login form:
 
@@ -153,7 +153,7 @@ For example, enter `agust` and `agust@hotel2`, then click **Logga in**. Password
 
 These are intentionally public credentials for the local demonstration database only. They must not be reused for real deployments.
 
-### 5 Try the main workflows
+### 5. Try the main workflows
 
 1. Open **Hantera gäster** and choose **Skapa ny gäst**. Enter a first name, surname, unique email and telephone number, and a payment method. For example, use `Demo`, `Guest`, `demo.guest@example.com`, and `0700000001` if those contact details have not already been registered.
 2. Return to the dashboard and select **Ny bokning**. Choose the guest, current or future stay dates, guest count, and an available room, then review and save the booking.
@@ -161,7 +161,7 @@ These are intentionally public credentials for the local demonstration database 
 
 The bundled bookings use dates in 2024, so today's arrival and departure lists may initially be empty. Create a booking for your demonstration dates to populate them.
 
-### 6 Stop the application and database
+### 6. Stop the application and database
 
 Close the Hotel2 window, then run from the project root:
 
