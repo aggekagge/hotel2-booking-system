@@ -181,17 +181,6 @@ This keeps the stopped container and its current demo data for the next run. Sta
 | The application cannot connect to MySQL | Check that `db` is healthy with `docker compose -f docker/docker-compose.yml ps`. Inspect startup errors with `docker compose -f docker/docker-compose.yml logs db`. |
 | Agust's login is missing from an older database | Use `admin` / `Admin`, or apply the supplied `docker/add-agust-admin.sql` update to add Agust. Initialization scripts run only for a fresh database. |
 
-## Development Context and My Contributions
-
-This project was developed as a student application. The features above describe the **system as a whole**.
-
-My main contributions were:
-
-- Implemented backend application logic for hotel reception and management workflows.
-- Developed object-oriented Java classes to organize application data and behavior.
-- Contributed to database features supporting persistent storage in MySQL.
-- Implemented input validation for email addresses, phone numbers and other user inputs.
-
 ## Limitations and Possible Improvements
 
 As a university prototype, Hotel2 has areas that could be strengthened for production use:
@@ -200,5 +189,14 @@ As a university prototype, Hotel2 has areas that could be strengthened for produ
 - **Financial calculations:** Use decimal arithmetic and consistent rounding for reservation totals.
 - **Security:** Improve password storage, configuration handling, and server-side authorization before use with real users or data.
 - **Desktop usability:** Refine fixed-size layouts and modal interactions for different screens and operating systems.
+
+## Development Context and My Contributions
+
+My main contributions were:
+
+- Implemented backend application logic for hotel reception and management workflows.
+- Developed object-oriented Java classes to organize application data and behavior.
+- Contributed to database features supporting persistent storage in MySQL.
+- Implemented input validation for email addresses, phone numbers and other user inputs.
 
 #### Developed for the **1DT908 "Mjukvaruutvecklingsprojekt"** Standard level course at Linnaeus University, fall 2023.
