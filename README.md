@@ -30,7 +30,7 @@ The application supports two user roles:
 <table>
   <tr>
     <td width="50%">
-      <img src="img/H2login.png" alt="login" width="99%">
+      <img src="img/H2login.png" alt="login" width="99.5%">
     </td>
     <td width="50%">
       <img src="img/H2main.png" alt="Calender" width="100%">
